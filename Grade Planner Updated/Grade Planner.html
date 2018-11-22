@@ -1,0 +1,387 @@
+-<!DOCTYPE html>
+<!-- General design improvements -->
+<!-- Potentially make Year 2 and 3 work IF Overall Course Grade -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head align=center><p id=title><font size="6">Grade Calculator</font></p></head>    
+    <script src="calc.js"></script>	
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <body>
+        <p id="explain"><font size="5">Please enter your grades(expected or received) into the given fields</font></p>
+        <br />      	
+        <input type=button id="btnY1" value="Year 1">          <!-- Year 1, 2 and 3 buttons -->
+        <input type=button id="btnY2" value="Year 2">
+        <input type=button id="btnY3" value="Year 3">
+        <br />
+        <br />
+        <table border="1" width=50% id="TableY1" style="display:inline">    <!-- Year 1 Table, uses Grades 0-11, Weight 0-11  -->
+            <tr>
+                <th colspan="6"><font size="5">Year 1</font></th>
+            </tr>
+            <tr>
+                <th>Assessment</th>
+                <th>Module Credits</th>
+                <th>Type</th>
+                <th>Grade (%)</th>
+                <th>Weight (%)</th>
+                <th>Overall Grade</th>
+            </tr>
+            <tr>
+                <td>SOFT154
+                <br> Computing Immersive Introduction</td> 
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade0" type="text" />       <!-- Grade ID reads from the input boxes on the table. -->
+                </td>      
+                <td>
+                    <center>
+                        <div id="weight0">100</div>     <!-- Weight ID reads the numbers from the weight column -->
+                    </center>     
+                </td>                  
+                <td align="center"> 
+                    <span id="Ograde0"> 0 </span>  
+                </td> 
+            </tr>
+            <tr>
+                <td>SOFT151<br> Software Engineering</td> 
+                <td align="center"> 20 </td>
+                <td >Test 1<br /> Test 2 <br /> Test 3*<br />Coursework </td>
+                <td>
+                    <input id="grade1" type="text" /><br />
+                    <input id="grade2" type="text" /><br />
+                    <input type="text" /><br />
+                    <input id="grade3" type="text" />
+                </td> 
+                <td> 
+                    <center>
+                        <div id="weight1"> 20 </div>  
+                        <div id="weight2"> 20 </div>                   
+                        <div >20*</div/>                    
+                        <div id="weight3"> 60 </div>
+                    </center> 
+                </td>
+                <td align="center">
+                    <span id="Ograde1"> 0 </span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD151<br> Databases </td>
+                <td align="center"> 20 </td>
+                <td >Coursework <br />Exam <br /></td>
+                <td>
+                    <input id="grade4" type="text" /><br />
+                    <input id="grade5" type="text" /><br />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight4">40 </div>
+                        <div id="weight5">60 </div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde2" >0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>				
+                    <select> 
+                        <option value="Plymouth Plus">Select your Plymouth Plus module</option>
+                        <option value="Intelligent Systems">AINT153PP Intelligent Systems</option>
+                        <option value="Understanding Big Data from Social Networks">MATH1608PP Understanding Big Data from Social Networks</option>
+                        <option value="Fundamentals of Computing Networking">NET102PP Fundamentals of Computing Networking</option>
+                        <option value="Cybersecurity Essentials">SEC102PP Cybersecurity Essentials</option>
+                        <option value="Developing E-commerce Applications">SOFT156PP Developing E-commerce Applications</option>                      
+                    </select>
+                </td> 
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade6" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight6">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde3">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>NET103<br> Principles of Infrastructure</td>
+                <td align="center"> 20 </td>
+                <td>Test<br />Coursework <br /></td>
+                <td>
+                    <input id="grade7" type="text" /><br />
+                    <input id="grade8" type="text" />
+                </td> 
+                <td> 
+                    <center>
+                        <div id="weight7">50</div>
+                        <div id="weight8">50</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde4">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD152<br> Systems Analysis and Design</td>
+                <td align="center"> 20 </td>
+                <td>Coursework<br />Exam </td>
+                <td>
+                    <input id="grade9" type="text" /><br />
+                    <input id="grade10" type="text" />
+                </td> 
+                <td> 
+                    <center>
+                        <div id="weight9">40</div>
+                        <div id="weight10">60</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde5">0</span>
+                </td> 
+            </tr>
+        </table>
+
+        <table border="1"  width=50% id="TableY2" style="display:none">  <!-- Year 2 Table, uses Grades 11-18 -->
+            <tr>
+                <th colspan="6"><font size="5">Year 2</font></th>
+            </tr>
+            <tr>
+                <th>Assessment</th>
+                <th>Module Credits</th>
+                <th>Type</th>
+                <th>Grade</th>
+                <th>Weight (%)</th>
+                <th>Overall Grade</th>
+            </tr>
+            <tr>
+                <td>SOFT251<br/> Object Oriented Software Engineering</td>
+                <td align="center"> 20 </td>
+                <td>Coursework <br />Test<br /></td>
+                <td>      
+                    <input id="grade11" type="text" /><br />      
+                    <input id="grade12" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight11">70</div>
+                        <div id="weight12">30</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde6">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD251<br> Database Applications Development</td>
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade13" type="text" />
+                </td>
+                <td>
+                    <center>
+                        <div id="weight13">100</div>
+                    </center>
+                </td>                
+                <td align="center"> 
+                    <span id="Ograde7">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD252<br> User-Centred Interface Design </td>
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade14" type="text" />
+                </td>
+                <td>
+                   <center>
+                        <div id="weight14">100</div>
+                    </center> 
+                </td>
+                <td align="center"> 
+                    <span id="Ograde8">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>SEC202<br> Secure Systems and Architecture</td>
+                <td align="center"> 20 </td>
+                <td>Test<br /> Practise</td>
+                <td>
+                    <input id="grade15" type="text" /><br />
+                    <input id="grade16" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight15">60</div> 
+                        <div id="weight16">40</div> 
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde9">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>PRDC251<br> Group Integrating Project</td>
+                <td align="center"> 20 </td>
+                <td>Coursework </td>
+                <td>
+                    <input id="grade17" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight17">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde10">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>
+                    <select>    <!-- DROP DOWN, SAME AS PLYMOUTH PLUS --> 
+                        <option value="Optional Module">Pick an Optional Module </option>
+                        <option value="Applications of AI">AINT251 Applications of AI </option>
+                        <option value="Servers, Datacentres and Cloud" >NET203 Servers, Datacentres and Cloud </option>
+                        <option value="Mobile Device and HCI Programming" >SOFT254 Mobile Device and HCI Programming </option>                       
+                    </select>
+                </td> 			
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade18" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight18">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde11">0</span>
+                </td> 
+            </tr>
+        </table>
+
+        <table border="1" width=50% id="TableY3" style=display:none>  <!-- Year 3 Table uses Grades 19-26 -->
+            <tr>
+                <th colspan="6"><font size="5">Year 3</font></th>
+            </tr>
+            <tr>
+                <th>Assessment</th>
+                <th>Module Credits</th>
+                <th>Type</th>
+                <th>Grade</th>
+                <th>Weight (%)</th>
+                <th>Overall Grade</th>
+            </tr>
+            <tr>
+                <td>PRCO304<br> Individual Computing Project</td>
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade19" type="text" />       
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight19">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde12">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD351<br> Database Applications Development</td>
+                <td align="center"> 20 </td>
+                <td>Test <br />Coursework <br />Exam<br /></td>
+                <td>
+                    <input id="grade20" type="text" /><br />
+                    <input id="grade21" type="text" /><br />
+                    <input id="grade22" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight20">40</div> 
+                        <div id="weight21">45</div>
+                        <div id="weight22">15</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde13">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>SOFT351<br>Programming for Entertainment Systems </td>	<!-- Same as Plymouth Plus for all following Optional Module -->
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade23" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight23">100</div>                        
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde14">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD353<br>Advanced Databases and Data Management</td>
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade24" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight24">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde15">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>PRCO305<br>Work-based Learning</td>
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade25" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight25">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde16">0</span>
+                </td> 
+            </tr>
+            <tr>
+                <td>ISAD356<br>IT Service Management</td>   <!-- DROP DOWN, SAME AS PLYMOUTH PLUS -->
+                <td align="center"> 20 </td>
+                <td>Coursework</td>
+                <td>
+                    <input id="grade26" type="text" />
+                </td> 
+                <td>
+                    <center>
+                        <div id="weight26">100</div>
+                    </center>
+                </td>
+                <td align="center"> 
+                    <span id="Ograde17">0</span>
+                </td> 
+            </tr>
+        </table>        
+        <p ><font size="3">*please enter lowest test score here</font></p>
+        <p id="over"><font size="4">Overall grade:</font><span id='OverallSpan'></span></p>
+        <p id="degree"><font size="4">Classification    </font><span id="degreespan"></span></p>
+        <input type=button id="btnCalc" value="Calculate">       
+    </body>
+</html>

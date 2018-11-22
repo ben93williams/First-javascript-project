@@ -1,0 +1,56 @@
+﻿body {
+    background-color: #D1D1E0;
+}
+
+#btnY1 {
+    position: relative;
+    left: 400px;
+}
+
+#btnY2 {
+    position: relative;
+    left: 400px;
+}
+
+#btnY3 {
+    position: relative;
+    left: 400px;
+}
+
+#title {
+    position:relative;
+    left: 375px;
+}
+
+#over {
+    position: relative;
+    left: 375px;
+}
+
+#degree {
+    position:relative;
+    left: 375px;
+}
+
+#btnCalc {
+    position:relative;
+    left: 450px;
+}
+
+#TableY1, th, td {
+    font: 15px arial;  
+}
+
+#TableY2, th, td {
+    font: 15px arial;
+}
+
+#TableY3, th, td {
+    font: 15px arial;
+}
+
+#explain {
+    position: relative;
+    left: 200px; 
+}
+
